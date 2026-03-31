@@ -5,7 +5,7 @@ function Card({ className, ...props }) {
   return (
     <div
       className={cn(
-        'rounded-xl border border-pale-oak/50 bg-white text-stone-900 shadow-sm',
+        'rounded-xl border border-pale-oak/50 bg-white text-stone-900 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100',
         className
       )}
       {...props}
@@ -22,14 +22,17 @@ function CardHeader({ className, ...props }) {
 function CardTitle({ className, ...props }) {
   return (
     <h3
-      className={cn('text-lg font-semibold leading-none tracking-tight', className)}
+      className={cn(
+        'text-lg font-semibold leading-none tracking-tight dark:text-zinc-100',
+        className
+      )}
       {...props}
     />
   )
 }
 
 function CardDescription({ className, ...props }) {
-  return <p className={cn('text-sm text-stone-500', className)} {...props} />
+  return <p className={cn('text-sm text-stone-500 dark:text-zinc-400', className)} {...props} />
 }
 
 function CardContent({ className, ...props }) {
@@ -38,7 +41,13 @@ function CardContent({ className, ...props }) {
 
 function CardFooter({ className, ...props }) {
   return (
-    <div className={cn('flex items-center border-t border-pale-oak/30 p-5 pt-4', className)} {...props} />
+    <div
+      className={cn(
+        'flex items-center border-t border-pale-oak/30 p-5 pt-4 dark:border-zinc-600',
+        className
+      )}
+      {...props}
+    />
   )
 }
 

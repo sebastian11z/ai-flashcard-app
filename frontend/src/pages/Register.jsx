@@ -32,7 +32,7 @@ export default function Register() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-canvas px-4">
+    <div className="flex min-h-screen items-center justify-center bg-canvas px-4 dark:bg-zinc-900">
       <Card className="w-full max-w-md shadow-md">
         <CardHeader>
           <CardTitle>Create account</CardTitle>
@@ -41,7 +41,10 @@ export default function Register() {
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             {error ? (
-              <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">
+              <p
+                className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-950/50 dark:text-red-300"
+                role="alert"
+              >
                 {error}
               </p>
             ) : null}
@@ -71,7 +74,7 @@ export default function Register() {
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? 'Creating…' : 'Create account'}
             </Button>
-            <p className="text-center text-sm text-stone-500">
+            <p className="text-center text-sm text-stone-500 dark:text-zinc-400">
               Already have an account?{' '}
               <Link to="/login" className="font-medium text-petal hover:text-lilac hover:underline">
                 Log in

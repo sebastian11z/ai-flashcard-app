@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-petal: #ba7ba1;
   --color-pink-orchid: #d5afc6;
@@ -11,10 +13,10 @@
 
 @layer base {
   * {
-    @apply border-stone-200;
+    @apply border-stone-200 dark:border-zinc-700;
   }
   body {
-    @apply bg-canvas text-stone-900 antialiased;
+    @apply bg-canvas text-stone-900 antialiased dark:bg-zinc-900 dark:text-zinc-100;
   }
   #root {
     @apply min-h-screen;

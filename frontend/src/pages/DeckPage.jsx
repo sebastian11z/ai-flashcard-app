@@ -156,13 +156,13 @@ export default function DeckPage() {
   }
 
   if (loading && !deck) {
-    return <p className="text-sm text-stone-500">Loading deck…</p>
+    return <p className="text-sm text-stone-500 dark:text-zinc-400">Loading deck…</p>
   }
 
   if (!deck) {
     return (
       <div className="space-y-4">
-        <p className="text-sm text-red-700">{error || 'Deck not found.'}</p>
+        <p className="text-sm text-red-700 dark:text-red-300">{error || 'Deck not found.'}</p>
         <Button asChild variant="secondary">
           <Link to="/dashboard">Back to decks</Link>
         </Button>
@@ -174,11 +174,20 @@ export default function DeckPage() {
     <div className="space-y-10">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <Button asChild variant="ghost" size="sm" className="-ml-2 mb-2 text-stone-600">
+          <Button
+            asChild
+            variant="ghost"
+            size="sm"
+            className="-ml-2 mb-2 text-stone-600 dark:text-zinc-300"
+          >
             <Link to="/dashboard">← All decks</Link>
           </Button>
-          <h1 className="text-2xl font-semibold tracking-tight text-stone-900">{deck.title}</h1>
-          <p className="mt-1 text-sm text-stone-500">{cards.length} cards in this deck.</p>
+          <h1 className="text-2xl font-semibold tracking-tight text-stone-900 dark:text-zinc-100">
+            {deck.title}
+          </h1>
+          <p className="mt-1 text-sm text-stone-500 dark:text-zinc-400">
+            {cards.length} cards in this deck.
+          </p>
         </div>
         <Button asChild>
           <Link to={`/decks/${deckId}/study`}>Study mode</Link>
@@ -186,11 +195,13 @@ export default function DeckPage() {
       </div>
 
       {error ? (
-        <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>
+        <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-950/50 dark:text-red-300">
+          {error}
+        </p>
       ) : null}
 
       <section className="space-y-4">
-        <h2 className="text-lg font-medium text-stone-900">Generate with AI</h2>
+        <h2 className="text-lg font-medium text-stone-900 dark:text-zinc-100">Generate with AI</h2>
         <Card>
           <CardContent className="space-y-4 pt-6">
             <div className="space-y-2">
@@ -227,10 +238,10 @@ export default function DeckPage() {
         </Card>
 
         {previewCards ? (
-          <Card className="border-lilac/35 bg-pale-oak/25">
+          <Card className="border-lilac/35 bg-pale-oak/25 dark:border-zinc-600 dark:bg-zinc-800/60">
             <CardHeader>
               <CardTitle className="text-base">Preview — {previewCards.length} new cards</CardTitle>
-              <p className="text-sm text-stone-600">
+              <p className="text-sm text-stone-600 dark:text-zinc-300">
                 Cards are saved on the server. Confirm to keep them, or cancel to remove this batch.
               </p>
             </CardHeader>
@@ -239,11 +250,11 @@ export default function DeckPage() {
                 {previewCards.map((c) => (
                   <li
                     key={c.id}
-                    className="rounded-lg border border-pale-oak/50 bg-white px-3 py-2"
+                    className="rounded-lg border border-pale-oak/50 bg-white px-3 py-2 dark:border-zinc-600 dark:bg-zinc-900"
                   >
-                    <span className="font-medium text-stone-800">{c.front}</span>
-                    <span className="text-stone-400"> → </span>
-                    <span className="text-stone-600">{c.back}</span>
+                    <span className="font-medium text-stone-800 dark:text-zinc-100">{c.front}</span>
+                    <span className="text-stone-400 dark:text-zinc-500"> → </span>
+                    <span className="text-stone-600 dark:text-zinc-300">{c.back}</span>
                   </li>
                 ))}
               </ul>
@@ -266,7 +277,7 @@ export default function DeckPage() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-lg font-medium text-stone-900">Add card manually</h2>
+        <h2 className="text-lg font-medium text-stone-900 dark:text-zinc-100">Add card manually</h2>
         <form onSubmit={handleAddCard} className="flex flex-col gap-3 sm:flex-row sm:items-end">
           <div className="grid flex-1 gap-3 sm:grid-cols-2">
             <div className="space-y-2">
@@ -295,9 +306,11 @@ export default function DeckPage() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-lg font-medium text-stone-900">All cards</h2>
+        <h2 className="text-lg font-medium text-stone-900 dark:text-zinc-100">All cards</h2>
         {cards.length === 0 ? (
-          <p className="text-sm text-stone-500">No cards yet. Add some or generate from notes.</p>
+          <p className="text-sm text-stone-500 dark:text-zinc-400">
+            No cards yet. Add some or generate from notes.
+          </p>
         ) : (
           <ul className="space-y-3">
             {cards.map((card) => (
@@ -334,9 +347,11 @@ export default function DeckPage() {
                       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                         <div className="space-y-1 text-sm">
                           <p>
-                            <span className="font-medium text-stone-900">{card.front}</span>
+                            <span className="font-medium text-stone-900 dark:text-zinc-100">
+                              {card.front}
+                            </span>
                           </p>
-                          <p className="text-stone-600">{card.back}</p>
+                          <p className="text-stone-600 dark:text-zinc-300">{card.back}</p>
                         </div>
                         <div className="flex shrink-0 gap-2">
                           <Button

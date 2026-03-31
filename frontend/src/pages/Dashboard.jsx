@@ -86,8 +86,12 @@ export default function Dashboard() {
     <div className="space-y-8">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight text-stone-900">Your decks</h1>
-          <p className="mt-1 text-sm text-stone-500">Create, open, or remove study decks.</p>
+          <h1 className="text-2xl font-semibold tracking-tight text-stone-900 dark:text-zinc-100">
+            Your decks
+          </h1>
+          <p className="mt-1 text-sm text-stone-500 dark:text-zinc-400">
+            Create, open, or remove study decks.
+          </p>
         </div>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
@@ -117,13 +121,15 @@ export default function Dashboard() {
       </div>
 
       {error ? (
-        <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>
+        <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-950/50 dark:text-red-300">
+          {error}
+        </p>
       ) : null}
 
       {loading ? (
-        <p className="text-sm text-stone-500">Loading decks…</p>
+        <p className="text-sm text-stone-500 dark:text-zinc-400">Loading decks…</p>
       ) : decks.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-pale-oak/55 bg-white/80 py-16 text-center text-sm text-stone-500">
+        <div className="rounded-xl border border-dashed border-pale-oak/55 bg-white/80 py-16 text-center text-sm text-stone-500 dark:border-zinc-600 dark:bg-zinc-800/80 dark:text-zinc-400">
           No decks yet. Create one to get started.
         </div>
       ) : (

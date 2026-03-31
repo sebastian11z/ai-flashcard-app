@@ -60,13 +60,13 @@ export default function StudyMode() {
   }
 
   if (loading) {
-    return <p className="text-sm text-stone-500">Loading study session…</p>
+    return <p className="text-sm text-stone-500 dark:text-zinc-400">Loading study session…</p>
   }
 
   if (error || !deck) {
     return (
       <div className="space-y-4">
-        <p className="text-sm text-red-700">{error || 'Deck not found.'}</p>
+        <p className="text-sm text-red-700 dark:text-red-300">{error || 'Deck not found.'}</p>
         <Button asChild variant="secondary">
           <Link to="/dashboard">Back</Link>
         </Button>
@@ -77,10 +77,12 @@ export default function StudyMode() {
   if (total === 0) {
     return (
       <div className="space-y-4">
-        <Button asChild variant="ghost" size="sm" className="-ml-2 text-stone-600">
+        <Button asChild variant="ghost" size="sm" className="-ml-2 text-stone-600 dark:text-zinc-300">
           <Link to={`/decks/${deckId}`}>← Back to deck</Link>
         </Button>
-        <p className="text-sm text-stone-500">This deck has no cards to study yet.</p>
+        <p className="text-sm text-stone-500 dark:text-zinc-400">
+          This deck has no cards to study yet.
+        </p>
       </div>
     )
   }
@@ -88,10 +90,10 @@ export default function StudyMode() {
   return (
     <div className="mx-auto flex max-w-xl flex-col items-center gap-8">
       <div className="flex w-full items-center justify-between gap-4">
-        <Button asChild variant="ghost" size="sm" className="text-stone-600">
+        <Button asChild variant="ghost" size="sm" className="text-stone-600 dark:text-zinc-300">
           <Link to={`/decks/${deckId}`}>← Deck</Link>
         </Button>
-        <p className="text-sm tabular-nums text-stone-500">
+        <p className="text-sm tabular-nums text-stone-500 dark:text-zinc-400">
           Card {index + 1} of {total}
         </p>
       </div>
@@ -104,7 +106,9 @@ export default function StudyMode() {
         className="max-w-full"
       />
 
-      <p className="text-center text-xs text-stone-400">Click the card or press Space to flip</p>
+      <p className="text-center text-xs text-stone-400 dark:text-zinc-500">
+        Click the card or press Space to flip
+      </p>
 
       <div className="flex w-full max-w-xl justify-between gap-4">
         <Button type="button" variant="secondary" disabled={index === 0} onClick={goPrev}>

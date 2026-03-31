@@ -11,7 +11,7 @@ export default function DeckCard({ deck, cardCount, onDelete }) {
         <CardTitle className="line-clamp-2 text-base">{deck.title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-1 pb-2">
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-stone-500 dark:text-zinc-400">
           {cardCount === 1 ? '1 card' : `${cardCount} cards`}
         </p>
       </CardContent>

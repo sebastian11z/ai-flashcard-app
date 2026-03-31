@@ -3,7 +3,6 @@ const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '..', '..', '.env') });
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
-console.log('[env] GEMINI_API_KEY:', process.env.GEMINI_API_KEY);
 
 const express = require('express');
 const cors = require('cors');

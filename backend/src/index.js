@@ -17,7 +17,8 @@ app.use(
     origin: '*',
     credentials: false,
   })
-);p.use(express.json());
+);
+app.use(express.json());
 app.use(authRoutes);
 app.use(deckRoutes);
 app.use(cardRoutes);

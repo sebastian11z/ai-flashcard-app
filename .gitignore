@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+# Frontend build
+frontend/dist
+frontend/dist-ssr
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Prisma (keep migrations; ignore local SQLite if you ever add it)
+*.db
+*.db-journal
+
+# Test / coverage
+coverage
+.nyc_output
+
+# Editor & OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.sublime-*
+
+# Misc
+*.local
+.cache

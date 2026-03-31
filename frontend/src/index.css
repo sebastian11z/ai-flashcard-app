@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-petal: #ba7ba1;
+  --color-pink-orchid: #d5afc6;
+  --color-lilac: #c28cae;
+  --color-pale-oak: #dec4a1;
+  /* Warm canvas between white and palette neutrals */
+  --color-canvas: #f7f3ee;
+}
+
+@layer base {
+  * {
+    @apply border-stone-200;
+  }
+  body {
+    @apply bg-canvas text-stone-900 antialiased;
+  }
+  #root {
+    @apply min-h-screen;
+  }
+}

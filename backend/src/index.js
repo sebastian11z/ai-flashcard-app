@@ -14,11 +14,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://ai-flashcard-app-ebon.vercel.app'],
+    origin: '*',
     credentials: false,
   })
-);
-app.use(express.json());
+);p.use(express.json());
 app.use(authRoutes);
 app.use(deckRoutes);
 app.use(cardRoutes);

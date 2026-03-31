@@ -1,4 +1,4 @@
-# Aralan
+# PromptCards
 
 A full-stack AI-powered flashcard web app that generates study cards from pasted notes or uploaded PDFs using Google Gemini. Built as a portfolio project by a Computer Science student.
 

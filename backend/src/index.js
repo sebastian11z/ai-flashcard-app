@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://ai-flashcard-app-ebon.vercel.app/login'],
+    origin: ['http://localhost:5173', 'https://ai-flashcard-app-ebon.vercel.app'],
     credentials: false,
   })
 );
